@@ -6,3 +6,5 @@ android:
     - android-28
     - add-on
     - extra
+
+    - sys-img-x86-android-26
