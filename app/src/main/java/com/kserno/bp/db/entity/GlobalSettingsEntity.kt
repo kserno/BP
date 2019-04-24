@@ -1,5 +1,6 @@
 package com.kserno.bp.db.entity
 
+import com.kserno.bp.model.GlobalSettingsModel
 import io.objectbox.annotation.Entity
 import io.objectbox.annotation.Id
 
@@ -8,7 +9,14 @@ import io.objectbox.annotation.Id
  */
 @Entity
 data class GlobalSettingsEntity(
-        @Id var id: Int,
+        @Id var id: Long,
         var enabled: Boolean
 ) {
+
+    fun toModel(): GlobalSettingsModel {
+        return GlobalSettingsModel(
+                enabled
+        )
+    }
+
 }
