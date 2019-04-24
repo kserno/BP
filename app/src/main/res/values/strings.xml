@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BP</string>
+    <string name="service_name">Notification Interceptor</string>
+</resources>
