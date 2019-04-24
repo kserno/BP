@@ -1,5 +1,7 @@
 package com.kserno.bp
 
+import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
+import androidx.test.platform.app.InstrumentationRegistry
 import com.kserno.bp.db.ObjectBoxDatabase
 import com.kserno.bp.db.defaultCall
 import com.kserno.bp.db.defaultGlobal
@@ -13,31 +15,36 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
 import java.io.File
 
 /**
- *  Created by filipsollar on 2019-04-24
+ *  Created by filipsollar on 2019-04-25
  */
-@RunWith(JUnit4::class)
-class ObjectBoxUnitTest {
+@RunWith(AndroidJUnit4ClassRunner::class)
+class ObjectBoxInstrumentedTest {
 
-    private val TEST_DIRECTORY = File("objectbox/test-db")
+    companion object {
+        const val TEST_DB_NAME = "TEST_DB"
+    }
+
     private var boxStore: BoxStore? = null
     private lateinit var database: ObjectBoxDatabase
 
     @Before
     fun setUp() {
-        BoxStore.deleteAllFiles(TEST_DIRECTORY)
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+
+        BoxStore.deleteAllFiles(context, TEST_DB_NAME)
         boxStore = MyObjectBox.builder()
-                .directory(TEST_DIRECTORY)
+                .name(TEST_DB_NAME)
+                .androidContext(context)
                 .debugFlags(DebugFlags.LOG_QUERIES)
                 .build()
 
         database = ObjectBoxDatabase(boxStore!!)
     }
 
-    
+
     @Test
     fun getDefaultGlobalModel() {
         Assert.assertEquals(database.getGlobalSettingsModel(), defaultGlobal.toModel())
@@ -61,7 +68,9 @@ class ObjectBoxUnitTest {
     @After
     fun tearDown() {
         boxStore?.close()
-        BoxStore.deleteAllFiles(TEST_DIRECTORY)
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+
+        BoxStore.deleteAllFiles(context, TEST_DB_NAME)
     }
 
 }
