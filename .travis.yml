@@ -2,6 +2,7 @@ language: android
 jdk: oraclejdk11
 sudo: false
 os: osx
+dist: precise
 
 android:
   components:
