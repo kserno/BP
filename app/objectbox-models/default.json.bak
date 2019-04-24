@@ -1,0 +1,94 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:8667406658286829158",
+      "lastPropertyId": "2:2340716519506328793",
+      "name": "GlobalSettingsEntity",
+      "properties": [
+        {
+          "id": "1:1846639453244244592",
+          "name": "id"
+        },
+        {
+          "id": "2:2340716519506328793",
+          "name": "enabled"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:5869812089606881944",
+      "lastPropertyId": "1:2819892097481282409",
+      "name": "NotificationSettingsEntity",
+      "properties": [
+        {
+          "id": "1:2819892097481282409",
+          "name": "id"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:6888213100958904262",
+      "lastPropertyId": "4:1109744896975308561",
+      "name": "MessageSettingsEntity",
+      "properties": [
+        {
+          "id": "1:649885878941805917",
+          "name": "id"
+        },
+        {
+          "id": "2:1506151639817606774",
+          "name": "enabled"
+        },
+        {
+          "id": "3:426216144424024638",
+          "name": "readText"
+        },
+        {
+          "id": "4:1109744896975308561",
+          "name": "readUnknownNumbers"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:5518897306992542811",
+      "lastPropertyId": "4:3715222189392132738",
+      "name": "CallSettingsEntity",
+      "properties": [
+        {
+          "id": "1:468634782279713286",
+          "name": "id"
+        },
+        {
+          "id": "2:4333380574257139280",
+          "name": "enabled"
+        },
+        {
+          "id": "3:1993138284754660419",
+          "name": "readText"
+        },
+        {
+          "id": "4:3715222189392132738",
+          "name": "readUnknownNumbers"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "4:5518897306992542811",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

@@ -37,6 +37,7 @@ class ObjectBoxUnitTest {
         database = ObjectBoxDatabase(boxStore!!)
     }
 
+    
     @Test
     fun getDefaultGlobalModel() {
         Assert.assertEquals(database.getGlobalSettingsModel(), defaultGlobal.toModel())
@@ -56,7 +57,7 @@ class ObjectBoxUnitTest {
     fun getDefaultNotificationsModel() {
         Assert.assertEquals(database.getNotificationSettingsModel(), defaultNotifications.toModel())
     }
-    
+
     @After
     fun tearDown() {
         boxStore?.close()
