@@ -15,15 +15,6 @@ android:
     - 'google-gdk-license-.+'
 
 
-env:
-  matrix:
-
-    - API=android-19 ABI=armeabi-v7a
-    - API=android-21 ABI=armeabi-v7a
-    - API=android-22 ABI=armeabi-v7a
-    - API=android-24 ABI=armeabi-v7a
-    - API=android-24 ABI=arm64-v8a
-
 # Emulator Management: Create, Start and Wait
 before_script:
   - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
