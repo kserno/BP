@@ -1,1 +1,1 @@
-include ':app', ':tsstest'
+include ':app', ':tsstest', ':common'
